@@ -13,7 +13,13 @@ app.use(express.static(directory)); // define o diretório de arquivos estático
 
 // muito usada para demonstrar que um serviço está up e running
 app.get('/health', (req, res) => {
-    res.send('OKKK!');
+    res.send('OK!!!');
+});
+
+// Exemplo de uso de path variable
+app.get('/info/:name', (req, res) => {
+    const name = req.params.name;
+    res.send('Hello ' + name + '!!!');
 });
 
 app.listen(3000, () => {
